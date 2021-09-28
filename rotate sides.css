@@ -1,0 +1,88 @@
+*,*:before,*:after{
+	box-sizing: border-box;
+}
+
+body{
+	height: 100vh;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	background: blue;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	transform-origin: center;
+	animation: rotate 2s ease forwards infinite;
+}
+.circle{
+	background: blue;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: relative;
+	
+}
+.circle:nth-child(1) {
+	left: -100px;
+	animation: slideleft 2s ease forwards infinite;
+}
+.circle:nth-child(2) {
+	left: 100px;
+	top: -50px;
+	animation: slideright 2s ease forwards infinite;
+}
+
+@keyframes rotate{
+	0%{
+		background: #53a965;
+		transform:rotate(0deg);
+	}
+	25%{
+		background: #53a9ef;
+	}
+	50%{
+		background: blue;
+		transform:rotate(0deg);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
+}
+@keyframes slideleft{
+	0%{
+		background: #53a965;
+		transform:translate(0px);
+	}
+	25%{
+		background: #53a9ef;
+		transform:translate(-100px);
+	}
+	50%{
+		background: blue;
+		transform:translate(0px);
+	}
+	100%{
+		background: blue;
+	}
+}
+
+@keyframes slideright{
+	0%{
+		background: #53a965;
+		transform:translate(0px);
+	}
+	25%{
+		background: #53a9ef;
+		transform:translate(100px);
+	}
+	50%{
+		background: blue;
+		transform:translate(0px);
+	}
+	100%{
+		background: blue;
+	}
+}
